@@ -8,6 +8,29 @@ end)
 Section:NewButton("Dark X", "mod wood", function()
     loadstring(game:HttpGet"https://raw.githubusercontent.com/darkxwin/darkxsourcethinkyoutousedarkx/main/darkx")()
 end)
+local Tab = Window:NewTab("BABFT")
+local Section = Tab:NewSection("Main")
+Section:NewButton("Neverlose", "Key Test/Beta/Delta", function()
+    -- Build A Boat
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Mana42138/Neverlose-UI/main/Scripts/Build%20A%20Boat.lua"))()
+    -- Key = Test/Beta
+end)
+Section:NewButton("Auto Build", "", function()
+    local old = httpget_async
+getgenv().httpget_async = function(url, ...)
+    if url == 'https://www.stenutilities.com/discord/babft' then
+        return 'https://discord.gg/HXYqGnEr2K'
+    end
+    
+    if url == 'https://raw.githubusercontent.com/StenDirt/Trash-Game/main/UI.lua' then
+        return old('https://raw.githubusercontent.com/Val1antt/scripts/main/BuildABoat/BackupLib.lua', ...)
+    end
+    
+    return old(url, ...)
+end
+
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/Val1antt/scripts/main/BuildABoat/BuildABoatRestored.lua"),true))()
+end)
 local Tab = Window:NewTab("PSX")
 local Section = Tab:NewSection("Main")
 Section:NewButton("Project WD", "Best Script", function()
@@ -81,7 +104,4 @@ Section:NewButton("Infinite yield", "Cmd roblox", function()
 end)
 Section:NewButton("Dark Dex", "Studio", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
-end)
-Section:NewButton("Infinite yield", "Cmd roblox", function()
-    loadstring(game:HttpGet"https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")()
 end)
